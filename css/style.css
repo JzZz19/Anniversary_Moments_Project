@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+#valentineQuestion {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  .answerButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: "courier";
+    margin-bottom: 20px;
+    background-color: #f6e1ff;
+    color: #e67373;
+    border-radius: 12px;
+    border: 2px solid #ffe3e1;
+    box-shadow: 1px 1px 2px #ff9494;
+    transition: 0.3s;
+  }
+  
+  .answerButton:hover {
+    background-color: #ff9494;
+    color: #ffe3e1;
+    border: 2px solid #ff9494;
+    box-shadow: 1px 1px 2px #ffe3e1;
+  }
+.greetings {
+    font-size: 2.5vw;  /* Ensures the text scales responsively */
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #D6A9E1; /* Light purple color */
+        text-shadow: 0 0 12px #ce09ff, 0 0 50px #D6A9E1, 0 0 100px #eeabff;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) {
+    animation-delay: .2s;
+}
+.greetings > span:nth-child(3) {
+    animation-delay: .4s;
+}
+.greetings > span:nth-child(4) {
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5) {
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6) {
+    animation-delay: 1s;
+}
+.greetings > span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+.greetings > span:nth-child(8) {
+    animation-delay: 1.4s;
+}
+.greetings > span:nth-child(9) {
+    animation-delay: 1.6s;
+}
+.greetings > span:nth-child(10) {
+    animation-delay: 1.8s;
+}
+.greetings > span:nth-child(11) {
+    animation-delay: 2s;
+}
+.greetings > span:nth-child(10) {
+    animation-delay: 1.8s;
+}
+.greetings > span:nth-child(11) {
+    animation-delay: 2s;
+}
+
+
+.description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #D6A9E1; /* Light purple color for description */
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6A4CFF; /* Purple background */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.button a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.button a:hover {
+    background-color: #5432A1; /* Darker purple on hover */
+    transform: translateY(-4px); /* Lift the button on hover */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+@media screen and (max-width: 574px) {
+    .greetings {
+        font-size: 12vw;  /* Responsive font size for smaller screens */
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .button a {
+        font-size: 1rem;
+    }
+}

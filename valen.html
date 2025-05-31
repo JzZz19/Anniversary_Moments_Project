@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>I love you, baby!!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .section {
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            color: antiquewhite;
+            transition: all ease-in-out 1s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .yesbutton, .nobutton {
+            padding: 15px;
+            font-size: 14px;
+            background-color: rgb(228, 188, 236);
+            color: antiquewhite;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            width: 120px;
+            cursor: pointer;
+            transition: 2s;
+        }
+
+        .nobutton {
+            position: absolute;
+        }
+
+        .yesbutton:hover {
+            transform: scale(1.2);
+        }
+
+        .nobutton:hover {
+            transform: translate(5px, 20%);
+        }
+
+        .lovesbtns {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .noo {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .heart {
+            width: 200px;
+            aspect-ratio: 1;
+            border-image: radial-gradient(rgb(241, 134, 255) 69%, #0000 70%) 84.5%/50%;
+            clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .yesbutton, .nobutton {
+                padding: 12px;
+                font-size: 16px;
+                width: 100px;
+            }
+
+            .lovesbtns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section {
+                gap: 20px;
+            }
+
+            .nobutton {
+                top: 50%;
+                left: 50%;
+                transition: top 1s, left 1s;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .yesbutton, .nobutton {
+                padding: 10px;
+                font-size: 14px;
+                width: 90px;
+            }
+
+            .heart {
+                width: 150px;
+            }
+
+            .section {
+                gap: 10px;
+            }
+
+            .nobutton {
+                top: 50%;
+                left: 50%;
+                transition: top 1s, left 1s;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div>
+            <h1 class="loveme">Do you love me?</h1>
+        </div>
+        <div class="lovesbtns">
+            <button class="yesbutton">Yes</button>
+            <div class="noo"> 
+                <button class="nobutton" onclick="moveno()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function moveno() {
+            const ele = document.querySelector('.nobutton');
+            const elee = document.querySelector('.noo');
+            const sectionWidth = document.querySelector('.section').offsetWidth;
+            const sectionHeight = document.querySelector('.section').offsetHeight;
+
+            // تحريك الزر بشكل عشوائي بناءً على حجم القسم
+            const randomTop = Math.random() * (sectionHeight - ele.offsetHeight); 
+            const randomLeft = Math.random() * (sectionWidth - ele.offsetWidth);
+
+            ele.style.top = `${randomTop}px`;
+            ele.style.left = `${randomLeft}px`;
+        }
+
+        function drawHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = `<span>I LOVE YOU</span>`;
+            heart.style.position = "absolute";
+            heart.style.top = "50%";
+            heart.style.left = "50%";
+            heart.style.transform = "translate(-50%, -50%)";
+            
+            heart.style.display = "flex";
+            heart.style.justifyContent = "center";
+            heart.style.alignItems = "center";
+            heart.style.color = "#fff";
+            heart.style.fontSize = "30px";
+       
+            const el = document.querySelector(".section");
+            el.innerHTML = '';
+            el.appendChild(heart);
+        }
+
+        document.querySelector(".yesbutton").addEventListener("click", drawHeart);
+    </script>
+</body>
+</html>

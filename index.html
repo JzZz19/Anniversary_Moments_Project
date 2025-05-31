@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>I love you, baby!!</title>
+</head>
+<body>
+
+    <div class="description">
+        <span>Choose What ever you want, My Love.</span>
+    </div>
+    <button class="answerButton" onclick="location.href='flower.html'">
+        Surprise 1
+      </button>
+      <button class="answerButton" onclick="location.href='heart.html'">
+        Surprise 2
+      </button>
+      <button class="answerButton" onclick="location.href='letter.html'">
+        Surprise 3
+      </button>
+      <button class="answerButton" onclick="location.href='pic.html'">
+        Surprise 4
+      </button>
+      <button class="answerButton" onclick="location.href='mes.html'">
+        Surprise 5
+      </button>
+      <button class="answerButton" onclick="location.href='valen.html'">
+        Surprise 6
+      </button>
+      <br />  
+      <script>
+        document
+          .getElementById("noButton")
+          .addEventListener("click", function () {
+            var yesButton = document.querySelector(
+              'button[onclick*="thankyou.html"]'
+            );
+            var currentFontSize = parseInt(
+              window.getComputedStyle(yesButton).fontSize
+            );
+            yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+          });
+      </script>
+    </body>
+</body>
+</html>
